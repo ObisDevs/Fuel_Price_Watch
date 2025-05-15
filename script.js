@@ -7,7 +7,7 @@ const stationSearch = document.getElementById('station-search');
 const productFilter = document.getElementById('product-filter');
 const stationsContainer = document.getElementById('stations-container');
 const loadingOverlay = document.getElementById('loading-overlay');
-import { Analytics } from "@vercel/analytics/next"
+// import { Analytics } from "@vercel/analytics/next"
 
 // Google Sheet URL - Provided by the user
 // This should be published as CSV for production use
