@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Price Watch</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="app-title">Fuel Price Watch</h1>
+                <p class="app-subtitle">Helping you find the best fuel prices in Lagos</p>
+                
+                <nav>
+                    <div class="nav-links">
+                        <a href="#prices">Prices</a>
+                        <a href="#about">About</a>
+                        <a href="#tips">Tips</a>
+                    </div>
+                    
+                    <div class="controls">
+                        <div class="sandclock-container">
+                            <span class="sandclock">⏳</span>
+                            <span class="timer-text">60s</span>
+                        </div>
+                        <button class="theme-toggle" aria-label="Toggle dark mode">
+                            <span class="mode-icon">🌙</span>
+                        </button>
+                        <a href="tel:+2348140331046" class="contact-btn">
+                            <span class="contact-icon">📞</span>
+                            <span class="contact-text">+2348140331046</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Top Affiliate Ad Banner -->
+        <a href="https://youtube.com/channel/UCEj3pjp3WEL7TapVCUDr3oQ" target="_blank" class="ad-banner" data-alt-text="Subscribe to our YouTube Channel">
+            <span class="ad-label">Ad</span>
+            <img src="https://via.placeholder.com/1200x150/4caf50/ffffff" alt="Subscribe to our YouTube Channel" />
+        </a>
+        
+        <!-- Dashboard Section - Average Prices -->
+        <section class="dashboard" id="dashboard" style="animation: fadeIn 0.8s ease-out;">
+            <div class="price-card">
+                <div class="price-type"><span>⛽</span> Petrol</div>
+                <div class="price-value">₦<span id="avg-petrol">0.00</span></div>
+                <div class="price-trend trend-up">
+                    <span>↑</span> <span id="petrol-trend">0.0%</span>
+                </div>
+                <div class="last-updated">Updated: <span id="last-updated-time">-</span></div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-type"><span>🛢️</span> Diesel</div>
+                <div class="price-value">₦<span id="avg-diesel">0.00</span></div>
+                <div class="price-trend trend-up">
+                    <span>↑</span> <span id="diesel-trend">0.0%</span>
+                </div>
+                <div class="last-updated">Updated: <span id="last-updated-time-diesel">-</span></div>
+            </div>
+            
+            <div class="price-card">
+                <div class="price-type"><span>🔥</span> Kerosene</div>
+                <div class="price-value">₦<span id="avg-kerosene">0.00</span></div>
+                <div class="price-trend trend-down">
+                    <span>↓</span> <span id="kerosene-trend">0.0%</span>
+                </div>
+                <div class="last-updated">Updated: <span id="last-updated-time-kerosene">-</span></div>
+            </div>
+        </section>
+        
+        <!-- Search and Filter Section -->
+        <section class="filter-section" id="prices" style="animation: fadeIn 0.6s ease-out;">
+            <input type="text" class="search-box" id="station-search" placeholder="Search by station name or location...">
+            <select class="filter-dropdown" id="product-filter">
+                <option value="all">All Products</option>
+                <option value="petrol">Petrol Only</option>
+                <option value="diesel">Diesel Only</option>
+                <option value="kerosene">Kerosene Only</option>
+            </select>
+            <button class="btn" id="refresh-btn">Refresh</button>
+        </section>
+        
+        <!-- Fuel Stations Section -->
+        <section class="stations-grid" id="stations-container" style="animation: fadeIn 1s ease-out;">
+            <!-- Stations will be populated dynamically via JavaScript -->
+            <div class="station-card">
+                <h3 class="station-name">Loading Stations...</h3>
+                <p class="station-location">Please wait while we fetch the latest data</p>
+            </div>
+        </section>
+        
+        <!-- Bottom Affiliate Ad Banner -->
+        <a href="https://youtube.com/channel/UCEj3pjp3WEL7TapVCUDr3oQ" target="_blank" class="ad-banner" data-alt-text="Watch Our Fuel Economy Tips">
+            <span class="ad-label">Ad</span>
+            <img src="https://via.placeholder.com/1200x150/1565c0/ffffff" alt="Watch Our Fuel Economy Tips" />
+        </a>
+        
+        <!-- About Section -->
+        <section id="about" style="margin: 50px 0;">
+            <h2 style="margin-bottom: 20px; color: var(--primary-green);">About Fuel Price Watch</h2>
+            <p style="margin-bottom: 15px;">
+                Fuel Price Watch is a community-driven platform that helps you find the best fuel prices in your area. Our data is updated regularly and sourced from user reports and official channels.
+            </p>
+            <p>
+                We aim to provide transparent and up-to-date information to help consumers make informed decisions about where to purchase fuel products.
+            </p>
+        </section>
+        
+        <!-- Tips Section -->
+        <section id="tips" style="margin: 50px 0;">
+            <h2 style="margin-bottom: 20px; color: var(--primary-green);">Fuel Saving Tips</h2>
+            <ul style="list-style-position: inside; margin-left: 20px;">
+                <li style="margin-bottom: 10px;">Maintain proper tire pressure to improve fuel efficiency.</li>
+                <li style="margin-bottom: 10px;">Remove excess weight from your vehicle when not needed.</li>
+                <li style="margin-bottom: 10px;">Use air conditioning sparingly, especially in city driving.</li>
+                <li style="margin-bottom: 10px;">Plan your trips efficiently to avoid unnecessary driving.</li>
+                <li>Consider carpooling or using public transportation when possible.</li>
+            </ul>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="disclaimer">
+                    Disclaimer: Prices are user-submitted and may vary. Please verify prices at the station before making purchase decisions.
+                </p>
+                <p class="footer-credit">
+                    © 2025 Fuel Price Watch. All information is provided for informational purposes only.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modern Colorful Preloader -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">LOADING FUEL PRICES</div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
